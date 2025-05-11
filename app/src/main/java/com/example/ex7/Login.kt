@@ -14,7 +14,7 @@ class Login : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val intent = Intent(this, MainActivity::class.java)
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -26,7 +26,7 @@ class Login : AppCompatActivity() {
             if (email.isNotEmpty() && senha.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email,senha).addOnCompleteListener{
                     if(it.isSuccessful) {
-
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     } else {
                         Toast.makeText(this, "ERRO: " + it.exception.toString() , Toast.LENGTH_SHORT).show()
@@ -35,6 +35,10 @@ class Login : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "ERRO: Campos vazios.", Toast.LENGTH_SHORT).show()
             }
+        }
+        binding.esqueciSenha.setOnClickListener{
+            val intent = Intent(this, EsqueciSenha::class.java)
+            startActivity(intent)
         }
     }
 }

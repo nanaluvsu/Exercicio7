@@ -52,5 +52,6 @@ dependencies {
     implementation(libs.googleid)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
+    implementation("androidx.cardview:cardview:1.0.0")
     androidTestImplementation(libs.androidx.espresso.core)
 }
