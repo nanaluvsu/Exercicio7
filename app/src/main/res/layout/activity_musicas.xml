@@ -25,9 +25,20 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:maxLines="1"
-            android:text="Sewerslvt hiii"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:elevation="5pt"/>
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:src="@drawable/back"
+            android:contentDescription="Back"
+            android:layout_gravity="end|center_vertical" />
+
+
 
     </androidx.appcompat.widget.Toolbar>
 

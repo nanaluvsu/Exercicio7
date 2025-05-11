@@ -26,6 +26,16 @@
             android:textSize="20sp"
             android:gravity="center"
             android:maxLines="1" />
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:src="@drawable/back"
+            android:contentDescription="Logout"
+            android:layout_gravity="end|center_vertical" />
+
     </androidx.appcompat.widget.Toolbar>
     <EditText
         android:id="@+id/emailField"

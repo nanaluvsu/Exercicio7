@@ -17,6 +17,13 @@ class MainActivity : AppCompatActivity() {
 
     data class musga(val title: String, val duration: String)
     override fun onCreate(savedInstanceState: Bundle?) {
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user == null) {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            return
+        }
         super.onCreate(savedInstanceState)
         var artistas = listOf(
             Artistas("1","Sewerslvt"),
@@ -34,6 +41,12 @@ class MainActivity : AppCompatActivity() {
         binding.imagealbum2.setOnClickListener{
             var intent = Intent(this@MainActivity, Musicas::class.java)
             intent.putExtra("artist","Cynthoni")
+            startActivity(intent)
+        }
+
+        binding.logout.setOnClickListener{
+            val intent = Intent(this, Login::class.java)
+            Toast.makeText(this,"Logout realizado com sucesso.", Toast.LENGTH_SHORT).show()
             startActivity(intent)
         }
         }

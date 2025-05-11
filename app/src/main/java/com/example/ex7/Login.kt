@@ -38,6 +38,12 @@ class Login : AppCompatActivity() {
         }
         binding.esqueciSenha.setOnClickListener{
             val intent = Intent(this, EsqueciSenha::class.java)
+            val email = binding.emailField.text.toString()
+            intent.putExtra("email", email)
+            startActivity(intent)
+        }
+        binding.back.setOnClickListener{
+            val intent = Intent(this, Cadastro::class.java)
             startActivity(intent)
         }
     }
